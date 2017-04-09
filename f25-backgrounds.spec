@@ -10,7 +10,7 @@
 %global with_extras 1
 
 Name:           %{bgname}-backgrounds
-Version:        %{relnum}.2
+Version:        %{relnum}.3
 Release:        1%{?dist}
 Summary:        FedBerry %{relnum} default desktop background
 License:        CC-BY-SA
@@ -139,23 +139,24 @@ make %{?_smp_mflags}
 %license CC-BY-SA-4.0 Attribution
 %dir %{_datadir}/backgrounds/%{bgname}
 %dir %{_datadir}/backgrounds/%{bgname}/default
-%{_datadir}/backgrounds/%{bgname}/default/normalish
-%{_datadir}/backgrounds/%{bgname}/default/standard
-%{_datadir}/backgrounds/%{bgname}/default/wide
-%{_datadir}/backgrounds/%{bgname}/default/tv-wide
-%{_datadir}/backgrounds/%{bgname}/default/%{bgname}.xml
-
+%dir %{_datadir}/backgrounds/%{bgname}/default-alt
+%{_datadir}/backgrounds/%{bgname}/default/
+%{_datadir}/backgrounds/%{bgname}/default-alt/
 %files kde
 %{_kde4_datadir}/wallpapers/%{Bg_Name}/
+%{_kde4_datadir}/wallpapers/%{Bg_Name}_alt/
 
 %files gnome
 %{_datadir}/gnome-background-properties/%{bgname}.xml
+%{_datadir}/gnome-background-properties/%{bgname}-alt.xml
 
 %files mate
 %{_datadir}/mate-background-properties/%{bgname}.xml
+%{_datadir}/mate-background-properties/%{bgname}-alt.xml
 
 %files xfce
 %{_datadir}/xfce4/backdrops/%{bgname}.png
+%{_datadir}/xfce4/backdrops/%{bgname}-alt.png
 
 %if %{with_extras}
 %files extras-base
@@ -179,6 +180,9 @@ make %{?_smp_mflags}
 %endif
 
 %changelog
+* Sun Apr 09 2017 Vaughan <devel at agrez dot net> - 25.3-1
+- Update fedberry backgrounds
+
 * Tue Jan 10 2017 Vaughan <devel at agrez dot net> - 25.2-1
 - Update for 25 release
 - Sync with Fedora 25 backgrounds
